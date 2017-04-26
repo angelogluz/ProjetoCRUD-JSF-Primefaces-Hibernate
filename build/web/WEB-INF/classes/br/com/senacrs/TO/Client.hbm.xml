@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/04/2016 09:29:45 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.com.senacrs.TO.Client" table="client" catalog="DBTest" optimistic-lock="version">
+        <id name="idClient" type="java.lang.Integer">
+            <column name="idClient" />
+            <generator class="identity" />
+        </id>
+        <property name="nameClient" type="string">
+            <column name="nameClient" length="45" not-null="true" />
+        </property>
+        <property name="cpfClient" type="string">
+            <column name="cpfClient" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="contactClient" type="string">
+            <column name="contactClient" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
