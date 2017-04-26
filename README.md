@@ -11,7 +11,7 @@ Este projeto apresenta um simples CRUD utilizando as tecnologias citadas, sem fo
 ## Execução no Netbeans
 1. Clone no projeto 
 
-<code>git clone git@gitlab.com:angelogl/ProjetoCRUD-JSF-Primefaces-Hibernate.git</code>
+<code>git clone git@github.com:angelogluz/ProjetoCRUD-JSF-Primefaces-Hibernate.git</code>
 
 2. Execute o script do Banco de Dados para criar um banco ["DBTest"](https://github.com/angelogluz/ProjetoCRUD-JSF-Primefaces-Hibernate/blob/master/DBTest.sql)
 
