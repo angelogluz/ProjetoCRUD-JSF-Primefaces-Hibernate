@@ -35,7 +35,7 @@
 
                 <p:layoutUnit position="center">
                     <h:form id="formulario">
-                        <p:panel id="cadastro" header="Cadastro">
+                        <p:panelGrid id="cadastro" columns="2">
                             <p:outputLabel value="Nome: "/>
                             <p:inputText value="#{clientController.cliente.nameClient}"/>
                             <p:outputLabel value="CPF: "/>
@@ -43,19 +43,27 @@
                             <p:outputLabel value="Telefone: "/>
                             <p:inputMask mask="(99) 9999-9999" value="#{clientController.cliente.contactClient}"/>
                             <p:commandButton value="Salvar" action="#{clientController.salvar()}" update="formulario"/>
-                        </p:panel>
+                        </p:panelGrid>
                         <p:panel id="listagem" header="Listagem">
                             <p:dataTable var="cliente" value="#{clientController.listar()}">
-                                <p:column headerText="ID"> #{cliente.idClient} </p:column>
-                                <p:column headerText="Nome"> #{cliente.nameClient} </p:column>
-                                <p:column headerText="Telefone"> #{cliente.contactClient} </p:column>
-                                <p:column headerText="CPF"> #{cliente.cpfClient} </p:column>
+                            <p:column headerText="ID" filterBy="#{cliente.idClient}" > 
+                                    <p:outputLabel value="#{cliente.idClient}"/> 
+                                </p:column>
+                            <p:column headerText="Nome" filterBy="#{cliente.nameClient}"> 
+                                    <p:outputLabel value="#{cliente.nameClient}"/> 
+                                </p:column>
+                            <p:column headerText="Telefone" filterBy="#{cliente.contactClient}"> 
+                                    <p:outputLabel value="#{cliente.contactClient}"/> 
+                                </p:column>
+                            <p:column headerText="CPF" filterBy="#{cliente.cpfClient}"> 
+                                    <p:outputLabel value="#{cliente.cpfClient}"/> 
+                                </p:column>
                                 <p:column headerText="Opções" >
-                                    <p:commandButton value="Editar" update=":formulario">
+                                    <p:commandButton value="Editar" update=":formulario" style="width: 100px; height:50px; text-align: center" >
                                         <f:setPropertyActionListener target="#{clientController.cliente}"
                                                                      value="#{cliente}" />      
                                     </p:commandButton>
-                                    <p:commandButton value="Remover" update=":formulario" 
+                                    <p:commandButton value="Remover" update=":formulario" style="width: 100px; height:50px; text-align: center"
                                                      action="#{clientController.remover(cliente)}">
                                     </p:commandButton>
                                 </p:column>
